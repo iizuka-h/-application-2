@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row　sampleRow">
+
+<div class="col-md-4">
+<%= render 'users/profile', user: @user %>
+<%= render 'books/form', book: @book %>
+</div>
+
+<div class="col-md-8">
+ <h1>All users</h1>
+  <table class="table">
+    <tr>
+      <th>image</th>
+      <th>name</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= attachment_image_tag user, :profile_image, size: "40x40", fallback: "no_image.jpg"%></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "show", user_path(user) %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  </div>
+</div>

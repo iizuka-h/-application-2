@@ -1,0 +1,27 @@
+
+<h2>UserInfo</h2>
+<div class="profile-container">
+<%= attachment_image_tag user, :profile_image, size: "100x100" , class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+
+<table class="table">
+<tr>
+    <td>name</td>
+    <td><%= user.name %></td>
+</tr>
+<tr>
+
+    <div class="field">
+    <td>introduction</td>
+    <td><%= user.introduction %></td>
+    </div>
+
+</tr>
+</table>
+
+　　 <% if user.id == current_user.id %>
+      <%= link_to "", edit_user_path(user), class: "btn btn-default form-control glyphicon glyphicon-wrench" %>
+    <% end %>
+
+
+</div>
+
